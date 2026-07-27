@@ -5,8 +5,8 @@ import axios from 'axios'
 import App from './App.jsx'
 import './index.css'
 
-// Set base URL
-axios.defaults.baseURL = 'http://localhost:5000';
+// ✅ SET BASEURL DENGAN ENVIRONMENT VARIABLE
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 // Interceptor untuk token
 axios.interceptors.request.use(
