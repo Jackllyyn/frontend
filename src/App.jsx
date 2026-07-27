@@ -5,9 +5,7 @@ import axios from 'axios';
 // ============================================================
 // SET BASE URL API - TANPA /api
 // ============================================================
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : 'https://backend-production-71d0.up.railway.app';
+const API_BASE_URL = 'https://backend-production-71d0.up.railway.app';
 
 axios.defaults.baseURL = API_BASE_URL;
 
