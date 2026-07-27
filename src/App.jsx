@@ -2,6 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
+
+// ============================================================
+// SET BASE URL API - LANGSUNG DI SINI
+// ============================================================
+const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://backend-production-71d0.up.railway.app/api';
+
+// Set default base URL untuk semua request axios
+axios.defaults.baseURL = API_BASE_URL;
+
+console.log('📍 API Base URL:', API_BASE_URL); // Cek di console browser
+
 // Layouts
 import PublicLayout from './components/layout/PublicLayout';
 import PrivateLayout from './components/layout/PrivateLayout';
