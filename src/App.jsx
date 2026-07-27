@@ -3,11 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 // ============================================================
-// SET BASE URL API - TANPA /api
+// SET BASE URL API - PAKAI ENVIRONMENT VARIABLE
 // ============================================================
-const API_BASE_URL = 'https://backend-production-71d0.up.railway.app';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 axios.defaults.baseURL = API_BASE_URL;
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 console.log('📍 API Base URL:', API_BASE_URL);
 
