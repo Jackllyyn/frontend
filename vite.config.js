@@ -7,9 +7,13 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',  // ← PASTIKAN PORT SESUAI
+        target: 'http://localhost:5000',
         changeOrigin: true
       }
     }
+  },
+  // Tambahkan ini untuk build
+  build: {
+    outDir: 'dist',
   }
 })
